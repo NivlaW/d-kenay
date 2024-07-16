@@ -513,7 +513,9 @@
                           $page = $_GET['page'];
                           if ($page == 'menu') {
                               include 'tabel_menu.php';
-                          } else if ($page == 'pesanan') {
+                          } else if ($page == 'menu_add') {
+                              include 'menu_add.php';
+                          }  else if ($page == 'pesanan') {
                               include 'tabel_pesanan.php';
                           } else if ($page == 'logout') {
                               include '../logout.php';

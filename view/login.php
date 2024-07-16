@@ -1,4 +1,4 @@
-<!-- <?php
+ <?php
 if($_SERVER['REQUEST_METHOD']=="POST"){
     include "koneksi.php";
     $user = $_POST['username'];
@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    Required meta tags 
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -132,4 +132,4 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     <script src="../../assets/js/todolist.js"></script>
     <!-- endinject -->
   </body>
-</html> -->
+</html>

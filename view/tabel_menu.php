@@ -4,7 +4,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Tabel Menu</h4>
-                  <a href="" class="btn btn-outline-primary btn-fw"> <i class="fa fa-plus-square-o"></i> Tambah Data</a>
+                  <a href="index.php?page=menu_add" class="btn btn-outline-primary btn-fw"> <i class="fa fa-plus-square-o"></i> Tambah Data</a>
                   <a href="" class="btn btn-outline-danger btn-fw"> <i class="fa fa-trash-o"></i> Hapus Data</a>
                   <div class="table-responsive">
                     <table class="table table-hover">
