@@ -9,7 +9,7 @@ unlink('foto/'.$row['foto']);
 
 echo"<script language = 'JavaScript'>
         alert('Data Berhasi Dihapus');
-        window.location.href = 'index.php?page=tabel_menu';
+        window.location.href = 'index.php?page=menu';
     </script>"
 
 ?>
