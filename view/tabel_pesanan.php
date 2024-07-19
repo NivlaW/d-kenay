@@ -12,8 +12,8 @@
                         <tr>
                           <th></th>
                           <th>No.</th>
-                          <th>Tanggal Pesanan</th>
                           <th>Nama Pemesan</th>
+                          <th>Tanggal Pesanan</th>
                           <th>Alamat Pemesan</th>
                           <th>Makanan</th>
                           <th>Jumlah Pesanan</th>

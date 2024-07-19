@@ -4,12 +4,12 @@
         <p class="card-description"> Basic form layout </p>
         <form class="forms-sample" method="POST" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="">Tanggal Pesanan</label>
-                <input type="date" class="form-control" id="" name="tgl" placeholder="">
+                <label for="">Nama Pemesan</label>
+                <input type="text" class="form-control" id="" name="nm_pelanggan" placeholder="">
             </div>
             <div class="form-group">
-                <label for="">Nama Pemesan</label>
-                <input type="text" class="form-control" id="" name="nama" placeholder="">
+                <label for="">Tanggal Pesanan</label>
+                <input type="date" class="form-control" id="" name="tanggal_pesanan" placeholder="">
             </div>
             <div class="form-group">
                 <label for="">Alamat</label>
@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label for="">Jumlah</label>
-                <input type="text" class="form-control" id="" name="jumlah" placeholder="">
+                <input type="text" class="form-control" id="" name="jml_makanan" placeholder="">
             </div>
             <div class="form-group">
                 <label for="">Total</label>
@@ -32,3 +32,25 @@
         </form>
     </div>
 </div>
+
+
+<?php
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    include "../koneksi.php";
+
+    $nama = $_FILES['foto']['name'];
+    $file_tmp = $_FILES['foto']['tmp_name'];
+    $n_random = rand(1, 9999);
+    $nama_baru = $n_random . '-' . $nama;
+    $folder = "foto/";
+
+    move_uploaded_file($file_tmp, $folder . $nama_baru);
+
+    $query = mysqli_query($con, "insert into tbl_pesanan (nm_pelanggan, tanggal_pesanan, alamat, makanan, jml_makanan, total) values ('$_POST[nm_pelanggan]', '$_POST[tanggal_pesanan]', '$_POST[alamat]', '$_POST[makanan]', '$_POST[jml_makanan]', '$_POST[total]' )");
+
+    echo "<script>
+            alert('Data Berhasil Disimpan');
+            document.location='index.php?page=pesanan';
+        </script>";
+};
+?>
