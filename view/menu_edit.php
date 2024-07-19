@@ -51,16 +51,21 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         $query = mysqli_query($con, "update tbl_menu set nama_menu='$_POST[nama_menu]', harga='$_POST[harga_makanan]', foto='$nama_baru' ");
     
         echo "<script>
-                alert('Data Berhasil Disimpan');
+                alert('Data Berhasil Diupdate');
                 document.location='index.php?page=menu';
             </script>";
     } else {
-        $query = mysqli_query($con, "update tbl_menu set nama_menu='$_POST[nama_menu]', harga='$_POST[harga_makanan]', foto='$nama_baru' ");
+        $query = mysqli_query($con, "update tbl_menu set nama_menu='$_POST[nama_menu]', harga_makanan='$_POST[harga_makanan]', foto='$nama_baru' ");
     
         echo "<script>
-                alert('Data Berhasil Disimpan');
+                alert('Data Gagal Diupdate');
                 document.location='index.php?page=menu';
             </script>";
     }
+
+    echo "<script>
+                alert('Data Berhasil Disimpan');
+                document.location='index.php?page=menu';
+            </script>";
 };
 ?>
