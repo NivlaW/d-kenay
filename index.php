@@ -12,7 +12,7 @@
 <body>
     <nav class="navbar sticky-top navbar-expand-md bg-light py-3">
         <div class="container d-flex justify-content-between">
-            <a class="navbar-brand">Navbar</a>
+            <a class="navbar-brand">Dapur Kenay</a>
             <!-- <div class="d-flex"></div> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
                         <a class="nav-link" aria-current="page" href="#">Order</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Login</a>
+                        <a class="nav-link" aria-current="page" href="view/login.php">Login</a>
                     </li>
                 </ul>
             </div>
@@ -39,6 +39,32 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
+    
+<div class="container">
+    <h1 class="text-center mt-3">Silahkan Pesan</h1>
+
+    <form class="mt-4">
+      <div class="mb-3">
+        <label for="nama" class="form-label">Nama Lengkap</label>
+        <input type="text" class="form-control" id="nama" placeholder="Masukkan nama lengkap Anda">
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Alamat Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Masukkan alamat email Anda">
+      </div>
+
+      <div class="mb-3">
+        <label for="pesan" class="form-label">Pesan Anda</label>
+        <textarea class="form-control" id="pesan" rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
