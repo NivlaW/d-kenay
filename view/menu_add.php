@@ -34,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
     move_uploaded_file($file_tmp, $folder . $nama_baru);
 
-    $query = mysqli_query($con, "insert into tbl_menu (nama_menu, harga_makanan, foto) values ('$_POST[nama_menu]', '$_POST[harga_makanan]', '$_POST[foto]')");
+    $query = mysqli_query($con, "insert into tbl_menu (nama_menu, harga_makanan, foto) values ('$_POST[nama_menu]', '$_POST[harga_makanan]', '$nama_baru'");
 
     echo "<script>
             alert('Data Berhasil Disimpan');

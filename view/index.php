@@ -356,6 +356,8 @@
             include 'menu_add.php';
           } else if ($page == 'menu_delete') {
             include 'menu_delete.php';
+          } else if ($page == 'menu_edit') {
+            include 'menu_edit.php';
           } else if ($page == 'pesanan') {
             include 'tabel_pesanan.php';
           } else if ($page == 'pesanan_add') {
