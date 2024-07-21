@@ -6,6 +6,7 @@
                     <h4 class="card-title">Tabel Pesanan</h4>
                     <a href="index.php?page=pesanan_add" class="btn btn-outline-primary btn-fw"> <i class="fa fa-plus-square-o"></i> Tambah Data</a>
                     <a href="" class="btn btn-outline-danger btn-fw"> <i class="fa fa-trash-o"></i> Hapus Data</a>
+                    <a target="_blank" href="export_excel.php" class="btn btn-success"><i class="fas fa-plus"></i> Export to Excel</a>
                     <div class="table-responsive">
                       <table class="table table-hover">
                         <thead>
@@ -29,13 +30,13 @@
                           while ($data = mysqli_fetch_array($ambil_data)) {
                             echo "<tr>";
                             echo "<td><input type=checkbox name=id_pesanan[] value=$data[id_pesanan]></td>";
-                            echo "<td>$no</td>";
-                            echo "<td>" . $data['nm_pelanggan'] . "</td>";
-                            echo "<td>" . $data['tanggal_pesanan'] . "</td>";
-                            echo "<td>" . $data['alamat'] . "</td>";
-                            echo "<td>" . $data['makanan'] . "</td>";
-                            echo "<td>" . $data['jml_makanan'] . "</td>";
-                            echo "<td>" . $data['total'] . "</td>";
+                            echo "<td style ='text-align: center;'>$no</td>";
+                            echo "<td style ='text-align: center;'>" . $data['nm_pelanggan'] . "</td>";
+                            echo "<td style ='text-align: center;'>" . $data['tanggal_pesanan'] . "</td>";
+                            echo "<td style ='text-align: center;'>" . $data['alamat'] . "</td>";
+                            echo "<td style ='text-align: center;'>" . $data['makanan'] . "</td>";
+                            echo "<td style ='text-align: center;'>" . $data['jml_makanan'] . "</td>";
+                            echo "<td style ='text-align: center;'>" . $data['total'] . "</td>";
                             echo "<td>
                         <a href=\"index.php?page=pesanan_edit&&id=$data[id_pesanan]\"class=\"btn btn-primary\">edit</a>
                         <a href=\"index.php?page=pesanan_delete&&id=$data[id_pesanan]\" class=\"btn btn-danger\" onclick=\"javascript:return confirm ('apakah anda ingin menghapus data ini...?')\">hapus</a>;

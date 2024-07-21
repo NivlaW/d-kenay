@@ -38,14 +38,6 @@
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     include "../koneksi.php";
 
-    $nama = $_FILES['foto']['name'];
-    $file_tmp = $_FILES['foto']['tmp_name'];
-    $n_random = rand(1, 9999);
-    $nama_baru = $n_random . '-' . $nama;
-    $folder = "foto/";
-
-    move_uploaded_file($file_tmp, $folder . $nama_baru);
-
     $query = mysqli_query($con, "insert into tbl_pesanan (nm_pelanggan, tanggal_pesanan, alamat, makanan, jml_makanan, total) values ('$_POST[nm_pelanggan]', '$_POST[tanggal_pesanan]', '$_POST[alamat]', '$_POST[makanan]', '$_POST[jml_makanan]', '$_POST[total]' )");
 
     echo "<script>
