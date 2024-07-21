@@ -37,8 +37,8 @@
                             echo "<td>" . $data['jml_makanan'] . "</td>";
                             echo "<td>" . $data['total'] . "</td>";
                             echo "<td>
-                        <a href=\"index.php?page=edit_pesanan&&id=$data[id_pesanan]\"class=\"btn btn-primary\">edit</a>
-                        <a href=\"index.php?page=hapus_pesanan&&id=$data[id_pesanan]\" class=\"btn btn-danger\" onclick=\"javascript:return confirm ('apakah anda ingin menghapus data ini...?')\">hapus</a>;
+                        <a href=\"index.php?page=pesanan_edit&&id=$data[id_pesanan]\"class=\"btn btn-primary\">edit</a>
+                        <a href=\"index.php?page=pesanan_delete&&id=$data[id_pesanan]\" class=\"btn btn-danger\" onclick=\"javascript:return confirm ('apakah anda ingin menghapus data ini...?')\">hapus</a>;
                             </td>";
                             echo "</tr>";
                             $no++;

@@ -48,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         $data_file = $query->fetch_array();
         unlink('foto/' . $data_file['foto']);
     
-        $query = mysqli_query($con, "update tbl_menu set nama_menu='$_POST[nama_menu]', harga='$_POST[harga_makanan]', foto='$nama_baru' ");
+        $query = mysqli_query($con, "update tbl_menu set nama_menu='$_POST[nama_menu]', harga_makanan='$_POST[harga_makanan]', foto='$nama_baru' ");
     
         echo "<script>
                 alert('Data Berhasil Diupdate');
