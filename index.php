@@ -102,8 +102,19 @@
         </div>
         <div class="mb-3">
           <label for="nama" class="form-label">Pilih Menu</label>
-          <select name="" id="" class="form-control">
-            <option value=""></option>
+          <select name="id_menu" id="" class="form-control">
+            <option value="">~Pilih Menu~</option>
+
+            <?php
+                            include 'koneksi.php';
+                            $no = 1;
+                            $ambilData = mysqli_query($con, "select * from tbl_menu");
+                            while ($data = mysqli_fetch_array($ambilData)) {
+                                ?>
+                                <option value="<?php echo"$data[id_menu]" ?>"><?php echo"$data[nama_menu]" ?></option>
+
+                            <?php } ?>
+
           </select>
         </div>
         <div class="mb-3">
