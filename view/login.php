@@ -1,29 +1,28 @@
- <?php
+<?php
 if($_SERVER['REQUEST_METHOD']=="POST"){
-    include "../koneksi.php";
+    include"../koneksi.php";
     $user = $_POST['username'];
     $pass = $_POST['password'];
-    $sql = mysqli_query($con, "select * from tbl_user where username = '$user' AND password='$pass'");
+    $sql = mysqli_query($con, "SELECT * FROM tbl_user WHERE username='$user' AND password='$pass'");
     $row = mysqli_num_rows($sql);
 
     if($row > 0){
         $login = mysqli_fetch_array($sql);
-        if($login['status']=="admin"){
+        if($login['status']=="keuangan"){
             session_start();
-            $_SESSION['nama_admin'] = $login['username'];
-            $_SESSION['pass_admin'] = $login['password'];
+            $_SESSION['nama_keuangan'] = $login['username'];
+            $_SESSION['pass_keuangan'] = $login['password'];
 
-            echo "<script language='JavaScript'>
-            confirm('login sebagai admin berhasil!');
-            document.location= 'index.php';
+            echo"<script language = 'JavaScript'>
+                confirm('Login sebagai keuangan berhasil..!');
+                document.location = 'index.php';
+            </script>";
+        } else{
+            echo"<script language = 'JavaScript'>
+            alert('username & password salah');
+             document.location = 'login.php';
             </script>";
         }
-    }
-    else{
-        echo "<script language='JavaScript'>
-        confirm('username dan password salah');
-        document.location= 'login.php';
-        </script>";
     }
 }
 ?>
