@@ -1,0 +1,33 @@
+:root{
+    --bs-primary: #FF9800!important;
+    --bs-secondary: #2C7865!important;
+}
+
+*{
+    background-color: #000!important;
+    color: aliceblue!important;
+    
+    
+}
+.btn-login {
+    border-radius: 5px!important;
+    background: var(--bs-primary)!important;
+    padding: 0.5rem 2.5rem 0.5rem 2.5rem!important;
+}
+.btn-submit {
+    /* border-radius: 5px!important; */
+    background: var(--bs-primary)!important;
+    padding: 0.5rem 2rem 0.5rem 2rem!important;
+}
+#about-1 {
+    margin: 5rem auto;
+}
+#about-2 {
+    margin: 5rem auto;
+}
+#order {
+    margin: 5rem 25rem;
+}
+.form-control {
+    border: 1px solid gray;
+}
