@@ -362,6 +362,10 @@
             include 'tabel_pesanan.php';
           } else if ($page == 'pesanan_add') {
             include 'pesanan_add.php';
+          } else if ($page == 'pesanan_delete') {
+            include 'pesanan_delete.php';
+          } else if ($page == 'pesanan_edit') {
+            include 'pesanan_edit.php';
           } else if ($page == 'logout') {
             include '../logout.php';
           } else {
