@@ -12,15 +12,15 @@ $row = mysqli_fetch_array($sql);
         <form class="forms-sample" method="POST" >
             <div class="form-group">
                 <label for="">Nama Pemesan</label>
-                <input type="text" class="form-control" id="" name="nm_pelanggan" value="<?php echo "$row[nm_pelanggan]"; ?>" placeholder="">
+                <input type="text" class="form-control" id="" name="nm_pelanggan" value="<?php echo "$row[nm_pelanggan]"; ?>" readonly>
             </div>
             <div class="form-group">
                 <label for="">Tanggal Pesanan</label>
-                <input type="date" class="form-control" id="" name="tanggal_pesanan" value="<?php echo "$row[tanggal_pesanan]"; ?>" placeholder="">
+                <input type="date" class="form-control" id="" name="tanggal_pesanan" value="<?php echo "$row[tanggal_pesanan]"; ?>" readonly>
             </div>
             <div class="form-group">
                 <label for="">Alamat</label>
-                <input type="text" class="form-control" id="" name="alamat" value="<?php echo "$row[alamat]"; ?>" placeholder="">
+                <input type="text" class="form-control" id="" name="alamat" value="<?php echo "$row[alamat]"; ?>" readonly>
             </div>
             <div class="form-group">
                 <label for="">Makanan</label>
