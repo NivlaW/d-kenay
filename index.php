@@ -118,7 +118,57 @@
             </div>
         </div>
     </section>
+    <section id="about-3" class="">
+        <div class="container-fluid container-lg">
+            <div class="row justify-content-center">
+                <div class="row product-strength-1 ">
+                    <div class="col-lg-6 d-flex justify-content-center" data-aos="fade-right">
+                        <img src="./assets/images/steak.png" alt="steak" class="steak-png" />
+                    </div>
+                    <div class="mt-4 mt-lg-0 col-lg-6 gap-lg-4 d-flex justify-content-center flex-column align-items-lg-baseline"
+                        data-aos="fade-left">
+                        <h1 class="title">Harga Kaki Lima <br> <span>Rasa Bintang Lima</span> </h1>
+                        <p class="desc">
+                            Dapur Kenay menyajikan <span>hidangan lezat</span> dengan harga yang terjangkau. Kami
+                            menghadirkan berbagai menu, mulai dari masakan tradisional hingga kreasi modern, semuanya
+                            dengan <span>kualitas terbaik berstandar hotel</span> untuk memanjakan lidah Anda.
 
+                        </p>
+                        <button class="btn btn-md px-5 rounded-pill">Ketahui Lebih Lanjut</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="menu" class="">
+        <div class="container-fluid container-lg">
+            <div class="row justify-content-center">
+                <div class="col-12 comp" data-aos="fade-up">
+                    <h1 class="title">Macam Macam Menu <span>Yang Menarik</span></h3>
+                        <p class="desc">
+                            We are a group of ambitious students from Indonesia that want to
+                            make a unique products which make you feel fascinate. It is our
+                            first journey to become number one.
+                        </p>
+                </div>
+                <!-- <div class="row product-strength-1 ">
+                    <div class="col-lg-6 d-flex justify-content-center" data-aos="fade-right">
+                        <img src="./assets/images/steak.png" alt="steak" class="steak-png" />
+                    </div>
+                    <div class="mt-4 mt-lg-0 col-lg-6 gap-lg-4 d-flex justify-content-center flex-column align-items-lg-baseline" data-aos="fade-left">
+                        <h1 class="title">Harga Kaki Lima <br> <span>Rasa Bintang Lima</span> </h1>
+                        <p class="desc">
+                            Dapur Kenay menyajikan <span>hidangan lezat</span> dengan harga yang terjangkau. Kami
+                            menghadirkan berbagai menu, mulai dari masakan tradisional hingga kreasi modern, semuanya
+                            dengan <span>kualitas terbaik berstandar hotel</span> untuk memanjakan lidah Anda.
+
+                        </p>
+                        <button class="btn btn-md px-5 rounded-pill">Ketahui Lebih Lanjut</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
     <section id="order">
         <div class="container">
             <h1 class="text-center mt-3">Silahkan Pesan</h1>

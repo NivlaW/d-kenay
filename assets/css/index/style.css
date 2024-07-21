@@ -58,9 +58,9 @@ body {
     background: aliceblue;
     border: 1px solid aliceblue;
 }
+/* about 2 */
 #about-2 {
     min-height: 100dvh;
-    margin: -2.5rem auto;
     display: flex;
     align-items: center;
 }
@@ -95,9 +95,66 @@ body {
     background: aliceblue;
     border: 1px solid aliceblue;
 }
+/* about 3 */
+#about-3 {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+}
+#about-3 img{
+    width: auto;
+    height: clamp(17rem, 30vw, 100rem);
+    filter: drop-shadow(0 0 25px rgb(255, 152, 0,0.35));
+}
+#about-3 .title{
+    font-weight: 800;
+}
+#about-3 .title span{
+    color: var(--bs-primary);
+}
+#about-3 .desc{
+    font-weight: 300;
+}
+#about-3 .desc span{
+    font-weight: 700;
+}
+#about-3 .btn{
+    font-weight: 500;
+    color: aliceblue;
+    border: 1px solid aliceblue;
+    transition: 0.5s ease;
+}
+#about-3 .btn:hover{
+    font-weight: 500;
+    color: var(--bs-primary);
+    background: aliceblue;
+    border: 1px solid aliceblue;
+}
+#menu {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+}
+#menu .title{
+    text-align: center;
+    font-weight: 800;
+}
+#menu .title span{
+    color: var(--bs-primary);
+}
+#menu .desc{
+    text-align: center;
+    padding: 0 15rem;
+    font-weight: 300;
+}
+#menu .desc span{
+    font-weight: 700;
+}
 #order {
     min-height: 100dvh;
-    margin: 2.5rem 25rem;
+    margin: auto 25rem;
+    display: flex;
+    align-items: center;
 }
 .form-control {
     border: 2px solid #2d2d2d!important;
