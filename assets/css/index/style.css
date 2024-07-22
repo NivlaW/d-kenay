@@ -171,6 +171,14 @@ body p {
 #menu .desc span{
     font-weight: 700;
 }
+#menu .card{
+    min-width: 11.25rem;
+    max-width: 11.25rem;
+}
+#menu .card-img{
+    width: 10rem;
+    height: auto;
+}
 #order {
     min-height: 100dvh;
     margin: auto 25rem;
