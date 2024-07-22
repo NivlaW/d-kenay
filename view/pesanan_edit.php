@@ -34,6 +34,17 @@ $row = mysqli_fetch_array($sql);
                 <label for="">Total</label>
                 <input type="text" class="form-control" id="" name="total" value="<?php echo "$row[total]"; ?>" placeholder="">
             </div>
+            <div class="form-group">
+            <label for="">Status</label>
+            <select class="form-control" id="" name="status">
+                <option value="">Select Status</option>
+                <?php
+                $status = $row['status']; // assume you have the status value from the database
+                ?>
+                <option value="Diproses" <?php echo ($status == 'Diproses') ? 'selected="selected"' : ''; ?>>Diproses</option>
+                <option value="Done" <?php echo ($status == 'Done') ? 'selected="selected"' : ''; ?>>Done</option>
+            </select>
+            </div>
             <button type="submit" class="btn btn-primary me-2">Submit</button>
             <button class="btn btn-light">Cancel</button>
         </form>
@@ -45,7 +56,7 @@ $row = mysqli_fetch_array($sql);
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     include "../koneksi.php";
     
-        $query = mysqli_query($con, "update tbl_pesanan set nm_pelanggan='$_POST[nm_pelanggan]', tanggal_pesanan='$_POST[tanggal_pesanan]', alamat='$_POST[alamat]', makanan='$_POST[makanan]', jml_makanan='$_POST[jml_makanan]', total='$_POST[total]'");
+        $query = mysqli_query($con, "update tbl_pesanan set nm_pelanggan='$_POST[nm_pelanggan]', tanggal_pesanan='$_POST[tanggal_pesanan]', alamat='$_POST[alamat]', makanan='$_POST[makanan]', jml_makanan='$_POST[jml_makanan]', total='$_POST[total]', status='$_POST[status]'");
     
         echo "<script>
                 alert('Data Berhasil Diupdate');

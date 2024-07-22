@@ -27,6 +27,14 @@
                 <label for="">Total</label>
                 <input type="text" class="form-control" id="" name="total" placeholder="">
             </div>
+            <div class="form-group">
+            <label for="">Status</label>
+            <select class="form-control" id="" name="status">
+                <option value="">Select Status</option>
+                <option value="Diproses">Diproses</option>
+                <option value="Done">Done</option>
+            </select>
+            </div>
             <button type="submit" class="btn btn-primary me-2">Submit</button>
             <button class="btn btn-light">Cancel</button>
         </form>
@@ -38,7 +46,7 @@
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     include "../koneksi.php";
 
-    $query = mysqli_query($con, "insert into tbl_pesanan (nm_pelanggan, tanggal_pesanan, alamat, makanan, jml_makanan, total) values ('$_POST[nm_pelanggan]', '$_POST[tanggal_pesanan]', '$_POST[alamat]', '$_POST[makanan]', '$_POST[jml_makanan]', '$_POST[total]' )");
+    $query = mysqli_query($con, "insert into tbl_pesanan (nm_pelanggan, tanggal_pesanan, alamat, makanan, jml_makanan, total, status) values ('$_POST[nm_pelanggan]', '$_POST[tanggal_pesanan]', '$_POST[alamat]', '$_POST[makanan]', '$_POST[jml_makanan]', '$_POST[total]', '$_POST[status]' )");
 
     echo "<script>
             alert('Data Berhasil Disimpan');

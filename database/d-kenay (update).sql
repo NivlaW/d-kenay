@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2024 at 07:20 AM
+-- Generation Time: Jul 22, 2024 at 03:49 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -34,6 +34,13 @@ CREATE TABLE `tbl_menu` (
   `foto` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tbl_menu`
+--
+
+INSERT INTO `tbl_menu` (`id_menu`, `nama_menu`, `harga_makanan`, `foto`) VALUES
+(2, 'ayam', 12000, '5693-Tuscan Steak and Rosemary Potatoes Recipe _ HelloFresh.jpeg');
+
 -- --------------------------------------------------------
 
 --
@@ -44,11 +51,19 @@ CREATE TABLE `tbl_pesanan` (
   `id_pesanan` int(11) NOT NULL,
   `nm_pelanggan` varchar(30) NOT NULL,
   `tanggal_pesanan` date NOT NULL,
-  `alamat` int(11) NOT NULL,
+  `alamat` varchar(50) NOT NULL,
   `makanan` varchar(25) NOT NULL,
   `jml_makanan` int(11) NOT NULL,
-  `total` double NOT NULL
+  `total` double NOT NULL,
+  `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_pesanan`
+--
+
+INSERT INTO `tbl_pesanan` (`id_pesanan`, `nm_pelanggan`, `tanggal_pesanan`, `alamat`, `makanan`, `jml_makanan`, `total`, `status`) VALUES
+(5, 'Fattah', '2024-07-19', 'asdasdads', 'Ayam', 2, 24000, 'done');
 
 -- --------------------------------------------------------
 
@@ -101,13 +116,13 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_menu`
 --
 ALTER TABLE `tbl_menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_pesanan`
 --
 ALTER TABLE `tbl_pesanan`
-  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`

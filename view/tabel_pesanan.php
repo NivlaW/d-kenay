@@ -19,6 +19,7 @@
                             <th>Makanan</th>
                             <th>Jumlah Pesanan</th>
                             <th>Total</th> 
+                            <th>Status</th> 
                             <th>Action</th> 
                           </tr>
                         </thead>
@@ -37,6 +38,13 @@
                             echo "<td style ='text-align: center;'>" . $data['makanan'] . "</td>";
                             echo "<td style ='text-align: center;'>" . $data['jml_makanan'] . "</td>";
                             echo "<td style ='text-align: center;'>" . $data['total'] . "</td>";
+                            if ($data['status'] == 'Diproses') {
+                              echo "<td style='text-align: center;'><span class='badge badge-info'>" . $data['status'] . "</span></td>";
+                            } elseif ($data['status'] == 'Done') {
+                                echo "<td style='text-align: center;'><span class='badge badge-success'>" . $data['status'] . "</span></td>";
+                            } else {
+                                echo "<td style='text-align: center;'>" . $data['status'] . "</td>";
+                            }
                             echo "<td>
                         <a href=\"index.php?page=pesanan_edit&&id=$data[id_pesanan]\"class=\"btn btn-primary\">edit</a>
                         <a href=\"index.php?page=pesanan_delete&&id=$data[id_pesanan]\" class=\"btn btn-danger\" onclick=\"javascript:return confirm ('apakah anda ingin menghapus data ini...?')\">hapus</a>;
