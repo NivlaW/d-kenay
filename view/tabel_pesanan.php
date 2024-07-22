@@ -4,9 +4,12 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Tabel Pesanan</h4>
-                    <a href="index.php?page=pesanan_add" class="btn btn-outline-primary btn-fw"> <i class="fa fa-plus-square-o"></i> Tambah Data</a>
-                    <a href="" class="btn btn-outline-danger btn-fw"> <i class="fa fa-trash-o"></i> Hapus Data</a>
-                    <a target="_blank" href="export_excel.php" class="btn btn-success"><i class="fas fa-plus"></i> Export to Excel</a>
+                    <div class="d-flex gap-2">
+                      <a href="index.php?page=pesanan_add" class="btn btn-outline-primary btn-fw"> <i class="fa fa-plus-square-o"></i> Tambah Data</a>
+                      <a href="" class="btn btn-outline-danger btn-fw"> <i class="fa fa-trash-o"></i> Hapus
+                        Data</a>
+                      <a target="_blank" href="export_excel.php" class="btn btn-success"><i class="fa fa-file-o"></i> Export to Excel</a>
+                    </div>
                     <div class="table-responsive">
                       <table class="table table-hover">
                         <thead>
@@ -18,9 +21,9 @@
                             <th>Alamat Pemesan</th>
                             <th>Makanan</th>
                             <th>Jumlah Pesanan</th>
-                            <th>Total</th> 
-                            <th>Status</th> 
-                            <th>Action</th> 
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -41,12 +44,12 @@
                             if ($data['status'] == 'Diproses') {
                               echo "<td style='text-align: center;'><span class='badge badge-info'>" . $data['status'] . "</span></td>";
                             } elseif ($data['status'] == 'Done') {
-                                echo "<td style='text-align: center;'><span class='badge badge-success'>" . $data['status'] . "</span></td>";
+                              echo "<td style='text-align: center;'><span class='badge badge-success'>" . $data['status'] . "</span></td>";
                             } else {
-                                echo "<td style='text-align: center;'>" . $data['status'] . "</td>";
+                              echo "<td style='text-align: center;'>" . $data['status'] . "</td>";
                             }
-                            echo "<td>
-                        <a href=\"index.php?page=pesanan_edit&&id=$data[id_pesanan]\"class=\"btn btn-primary\">edit</a>
+                            echo "<td class='d-flex gap-3'>
+                        <a href=\"index.php?page=pesanan_edit&&id=$data[id_pesanan]\"class=\"btn btn-warning\">edit</a>
                         <a href=\"index.php?page=pesanan_delete&&id=$data[id_pesanan]\" class=\"btn btn-danger\" onclick=\"javascript:return confirm ('apakah anda ingin menghapus data ini...?')\">hapus</a>;
                             </td>";
                             echo "</tr>";
