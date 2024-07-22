@@ -9,6 +9,9 @@ body {
     color: aliceblue!important;   
     background-color: #000!important;
 }
+body p {
+    margin-bottom: 0!important;
+}
 .btn-login {
     border-radius: 5px!important;
     background: var(--bs-primary)!important;
@@ -27,7 +30,23 @@ body {
     min-height: 100dvh;
     margin: -2.5rem auto;
     display: flex;
+    opacity: 100%;
     align-items: center;
+}
+.bg-grunge{
+    content: ' ';
+    display: block;
+    position: fixed;
+    /* left: 0;
+    top: 0; */
+    width: 100%;
+    height: 100%;
+    opacity: 0.25;
+    background-image: url(../../images/dark-grunge-texture.jpg);
+    background-position: 50% 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
 }
 #about-1 img{
     width: auto;
@@ -105,6 +124,8 @@ body {
     width: auto;
     height: clamp(17rem, 30vw, 100rem);
     filter: drop-shadow(0 0 25px rgb(255, 152, 0,0.35));
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 #about-3 .title{
     font-weight: 800;
@@ -173,5 +194,9 @@ body {
     #about-2 img{
         -webkit-transform: rotate(-90deg);
         transform:rotate(-90deg);
+    }
+    #menu .desc{
+        text-align: center;
+        padding: 0 0;
     }
 }
