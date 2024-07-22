@@ -1,3 +1,22 @@
+<?php
+session_start();
+include "../koneksi.php";
+
+if (!isset($_SESSION['nama_keuangan'])) {
+    header('Location: login.php');
+    exit();
+}
+$username = $_SESSION['nama_keuangan'];
+$sql = mysqli_query($con, "SELECT status FROM tbl_user WHERE username='$username'");
+$user = mysqli_fetch_array($sql);
+
+if ($user) {
+    $status = $user['status'];
+} else {
+    $status = "Unknown";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -123,10 +142,10 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                             <div class="dropdown-header text-center">
-                                <p class="mb-1 mt-3 fw-semibold">Fatah</p>
-                                <p class="fw-light text-muted mb-0">Keuangan</p>
+                                <p class="mb-1 mt-3 fw-semibold"><?php echo ($username); ?></p>
+                                <p class="fw-light text-muted mb-0"><?php echo ($status); ?></p>
                             </div>
-                            <a class="dropdown-item"><i
+                            <a class="dropdown-item" href="../index.php"><i
                                     class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
                         </div>
                     </li>
