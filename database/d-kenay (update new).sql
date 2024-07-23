@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2024 at 03:49 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Jul 23, 2024 at 07:31 AM
+-- Server version: 10.4.32-MariaDB-log
+-- PHP Version: 8.1.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,6 +31,7 @@ CREATE TABLE `tbl_menu` (
   `id_menu` int(11) NOT NULL,
   `nama_menu` varchar(25) NOT NULL,
   `harga_makanan` int(11) NOT NULL,
+  `best_seller` varchar(20) NOT NULL,
   `foto` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -38,8 +39,10 @@ CREATE TABLE `tbl_menu` (
 -- Dumping data for table `tbl_menu`
 --
 
-INSERT INTO `tbl_menu` (`id_menu`, `nama_menu`, `harga_makanan`, `foto`) VALUES
-(2, 'ayam', 12000, '5693-Tuscan Steak and Rosemary Potatoes Recipe _ HelloFresh.jpeg');
+INSERT INTO `tbl_menu` (`id_menu`, `nama_menu`, `harga_makanan`, `best_seller`, `foto`) VALUES
+(2, 'Crispy Chiken Steak', 22000, 'Y', '3717-steak.png'),
+(3, 'Grill Chiken Steak', 26000, 'Y', '594-BBQ_GRILL.png'),
+(4, 'Mie Ala Ala Gacoan', 11000, 'N', '4493-FotoJet-2023-02-19T203316884-1175934296.webp');
 
 -- --------------------------------------------------------
 
@@ -63,7 +66,7 @@ CREATE TABLE `tbl_pesanan` (
 --
 
 INSERT INTO `tbl_pesanan` (`id_pesanan`, `nm_pelanggan`, `tanggal_pesanan`, `alamat`, `makanan`, `jml_makanan`, `total`, `status`) VALUES
-(5, 'Fattah', '2024-07-19', 'asdasdads', 'Ayam', 2, 24000, 'done');
+(34, 'makin', '2024-07-23', 'tuk', '2', 1, 22000, 'Diproses');
 
 -- --------------------------------------------------------
 
@@ -116,13 +119,13 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_menu`
 --
 ALTER TABLE `tbl_menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_pesanan`
 --
 ALTER TABLE `tbl_pesanan`
-  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
