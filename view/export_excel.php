@@ -7,20 +7,20 @@ header("Content-Disposition: attachment; filename=report.xls")
     <div class="card-body">
         <div class="table-responsive">
 
-            <form  method="POST">
+            <form method="POST">
 
-                
+
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th></th>
-                            <th style ='text-align: center;'>No.</th>
-                            <th style ='text-align: center;'>Nama Pemesan</th>
-                            <th style ='text-align: center;'>Tanggal Pesanank</th>
-                            <th style ='text-align: center;'>Alamat Pemesan</th>
-                            <th style ='text-align: center;'>Makanan</th>
-                            <th style ='text-align: center;'>Jumlah Pesanan</th>
-                            <th style ='text-align: center;'>Total</th>
+                            <th style='text-align: center;'>No.</th>
+                            <th style='text-align: center;'>Nama Pemesan</th>
+                            <th style='text-align: center;'>Tanggal Pesanank</th>
+                            <th style='text-align: center;'>Alamat Pemesan</th>
+                            <th style='text-align: center;'>Makanan</th>
+                            <th style='text-align: center;'>Jumlah Pesanan</th>
+                            <th style='text-align: center;'>Total</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,7 +41,7 @@ header("Content-Disposition: attachment; filename=report.xls")
                             echo "<td style ='text-align: center;'>$data[alamat]</td>";
                             echo "<td style ='text-align: center;'>$data[makanan]</td>";
                             echo "<td style ='text-align: center;'>$data[jml_makanan]</td>";
-                            echo "<td  style ='text-align: center;'>Rp $total</td>";
+                            echo "<td  style ='text-align: center;'>Rp. $total</td>";
 
                             $no++;
                         }
