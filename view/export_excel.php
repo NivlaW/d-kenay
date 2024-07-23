@@ -16,7 +16,7 @@ header("Content-Disposition: attachment; filename=report.xls")
                             <th></th>
                             <th style='text-align: center;'>No.</th>
                             <th style='text-align: center;'>Nama Pemesan</th>
-                            <th style='text-align: center;'>Tanggal Pesanank</th>
+                            <th style='text-align: center;'>Tanggal Pesanan</th>
                             <th style='text-align: center;'>Alamat Pemesan</th>
                             <th style='text-align: center;'>Makanan</th>
                             <th style='text-align: center;'>Jumlah Pesanan</th>
