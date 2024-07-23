@@ -18,6 +18,14 @@
                             <label for="">Foto Menu</label>
                             <input type="file" class="form-control" id="" name="foto" placeholder="">
                         </div>
+                        <div class="form-group">
+                            <label for="">Apakah Menu Ini Best Seller</label>
+                            <select class="form-control" id="" name="status">
+                                <option value="">Select Status</option>
+                                <option value="Y">Iyaa</option>
+                                <option value="N">Tidak</option>
+                            </select>
+                        </div>
                         <button type="submit" class="btn btn-primary me-2">Submit</button>
                         <button type="button" onclick="history.back()" class="btn btn-light">Cancel</button>
                     </form>
@@ -39,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     move_uploaded_file($file_tmp, $folder . $nama_baru);
 
-    $query = mysqli_query($con, "INSERT INTO tbl_menu (nama_menu, harga_makanan, foto) VALUES ('$_POST[nama_menu]', '$_POST[harga_makanan]', '$nama_baru')");
+    $query = mysqli_query($con, "INSERT INTO tbl_menu (nama_menu, harga_makanan, best_seller, foto) VALUES ('$_POST[nama_menu]', '$_POST[harga_makanan]', '$_POST[status]', '$nama_baru')");
 
     if ($query) {
         echo "<script language='JavaScript'>
