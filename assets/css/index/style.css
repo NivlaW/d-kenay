@@ -176,7 +176,7 @@ body p {
     max-width: 11.25rem;
 }
 #menu .card-title{
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1vw, 100rem);
 }
 #menu .card-img{
     object-fit: cover;
@@ -209,5 +209,9 @@ body p {
     #menu .desc{
         text-align: center;
         padding: 0 0;
+    }
+    #menu .card{
+        min-width: 9.375rem;
+        max-width: 9.375rem;
     }
 }
