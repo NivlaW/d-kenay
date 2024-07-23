@@ -22,8 +22,16 @@ $row = mysqli_fetch_array($sql);
                             <input type="text" class="form-control" id="" name="harga_makanan" value="<?php echo "$row[harga_makanan]"; ?>" placeholder="">
                         </div>
                         <div class="form-group">
+                            <label for="">Apakah Menu Ini Best Seller</label>
+                            <select class="form-control" id="" name="best_seller" required>
+                                <option value="Y" <?php echo $row['best_seller'] == 'Y' ? 'selected' : ''; ?>>Iyaa</option>
+                                <option value="N" <?php echo $row['best_seller'] == 'N' ? 'selected' : ''; ?>>Tidak</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="">Foto</label>
-                            <input type="file" class="form-control" id="" name="foto" value="<?php echo "$row[foto]"; ?>" placeholder="">
+                            <a href="<?php echo"foto/$row[foto]";?>" target="_Blank"><?php echo"$row[foto]";?>
+                            <input type="file" name="foto" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-primary me-2">Submit</button>
                         <button type="button" onclick="history.back()" class="btn btn-light">Cancel</button>
@@ -34,45 +42,37 @@ $row = mysqli_fetch_array($sql);
     </div>
 </div>
 
-
-
 <?php
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
+if($_SERVER['REQUEST_METHOD']=="POST"){
     include "../koneksi.php";
 
-    $nama = $_FILES['foto']['name'];
+    $name = $_FILES['foto']['name'];
     $file_tmp = $_FILES['foto']['tmp_name'];
-    $n_random = rand(1, 9999);
-    $nama_baru = $n_random . '-' . $nama;
+    $n_random = rand(1,9999);
+    $nama_baru = $n_random . '-' . $name;
     $folder = "foto/";
 
-
-    if (!$file_tmp == "") {
-
+    if(!$file_tmp==""){
         move_uploaded_file($file_tmp, $folder . $nama_baru);
-
-        $query = mysqli_query($con, "select * from tbl_menu where id_menu = '$_GET[id]'");
+        $query = mysqli_query($con,"SELECT * From tbl_menu Where id_menu = '$_GET[id]'");
         $data_file = $query->fetch_array();
-        unlink('foto/' . $data_file['foto']);
-
-        $query = mysqli_query($con, "update tbl_menu set nama_menu='$_POST[nama_menu]', harga_makanan='$_POST[harga_makanan]', foto='$nama_baru' ");
-
-        echo "<script>
-                alert('Data Berhasil Diupdate');
-                document.location='index.php?page=menu';
-            </script>";
-    } else {
-        $query = mysqli_query($con, "update tbl_menu set nama_menu='$_POST[nama_menu]', harga_makanan='$_POST[harga_makanan]', foto='$nama_baru' ");
-
-        echo "<script>
-                alert('Data Gagal Diupdate');
-                document.location='index.php?page=menu';
-            </script>";
+        unlink('foto/' .$data_file['foto']);
+        $query = mysqli_query($con, "UPDATE tbl_menu set nama_menu = '$_POST[nama_menu]', harga_makanan='$_POST[harga_makanan]', best_seller='$_POST[best_seller]',foto='$nama_baru' where id_menu = $_GET[id]");
+    }
+    else {
+        $query = mysqli_query($con, "UPDATE tbl_menu set nama_menu = '$_POST[nama_menu]', harga_makanan='$_POST[harga_makanan]', best_seller='$_POST[best_seller]' where id_menu = $_GET[id]");
     }
 
-    echo "<script>
-                alert('Data Berhasil Disimpan');
-                document.location='index.php?page=menu';
-            </script>";
-};
+    if ($query) {
+        echo "<script language='JavaScript'>
+            alert('Data Berhasil disimpan');
+            document.location= 'index.php?page=menu';
+          </script>";
+    } else {
+        echo "<script language='JavaScript'>
+            alert('Gagal menyimpan data');
+            document.location= 'index.php?page=menu_edit';
+          </script>";
+    }
+}
 ?>
