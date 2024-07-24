@@ -1,35 +1,72 @@
           <div class="content-wrapper">
-              <div class="row">
-                  <div class="col-lg-12 grid-margin stretch-card">
-                      <div class="card">
-                          <div class="card-body">
-                              <h4 class="card-title">Tabel Pesanan</h4>
-                              <div class="d-flex gap-2">
-                                  <!-- <a href="index.php?page=pesanan_add" class="btn btn-outline-primary btn-fw"> <i
+            <div class="row">
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Tabel Pesanan</h4>
+
+                    <div class="form-row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="">Tanggal Awal</label>
+                          <input type="date" name="awal" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="">Tanggal Akhir</label>
+                          <input type="date" name="akhir" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="">&nbsp;</label><br>
+                          <input type="submit" name="cari" class="btn btn-success" value="Cari Data">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                      <!-- <a href="index.php?page=pesanan_add" class="btn btn-outline-primary btn-fw"> <i
                                           class="fa fa-plus-square-o"></i> Tambah Data</a> -->
-                                  <a href="" class="btn btn-outline-danger btn-fw"> <i class="fa fa-trash-o"></i> Hapus
-                                      Data</a>
-                                  <a target="_blank" href="export_excel.php" class="btn btn-success"><i
-                                          class="fa fa-file-o"></i> Export to Excel</a>
-                              </div>
-                              <div class="table-responsive">
-                                  <table class="table table-hover">
-                                      <thead>
-                                          <tr>
-                                              <th></th>
-                                              <th class="text-center">No.</th>
-                                              <th class="text-center">Nama Pemesan</th>
-                                              <th class="text-center">Tanggal Pesanan</th>
-                                              <th class="text-center">Alamat Pemesan</th>
-                                              <th class="text-center">Makanan</th>
-                                              <th class="text-center">Jumlah Pesanan</th>
-                                              <th class="text-center">Total</th>
-                                              <th class="text-center">Status</th>
-                                              <th class="text-center">Action</th>
-                                          </tr>
-                                      </thead>
-                                      <tbody>
-                                          <?php
+                      <a href="" class="btn btn-outline-danger btn-fw"> <i class="fa fa-trash-o"></i> Hapus
+                        Data</a>
+                      <a target="_blank" href="export_excel.php" class="btn btn-success"><i class="fa fa-file-o"></i> Export to Excel</a>
+                      <a href="laporan_pesanan.php?awal=<?php echo isset($_POST['awal']) ? $_POST['awal'] : ''; ?> &akhir= <?php echo isset($_POST['akhir']) ? $_POST['akhir'] : ''; ?>" target="_blank" class="btn btn-info"><i class="fas fa-plus"></i> Cetak Data</a>
+                    </div>
+
+                    <?php
+                    if (isset($_POST['cari'])) {
+                      $awal = $_POST['awal'];
+                      $akhir = $_POST['akhir'];
+                      include '../koneksi.php';
+                      $no = 1;
+                      $ambilData = mysqli_query($con, "select * from tbl_pesanan where tbl_pesanan.tanggal_pesanan BETWEEN '$awal' AND '$akhir' ");
+                    } else {
+                      include '../koneksi.php';
+                      $no = 1;
+                      $ambilData = mysqli_query($con, "select * from tbl_pesanan");
+                    }
+                    ?>
+
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th class="text-center">No.</th>
+                            <th class="text-center">Nama Pemesan</th>
+                            <th class="text-center">Tanggal Pesanan</th>
+                            <th class="text-center">Alamat Pemesan</th>
+                            <th class="text-center">Makanan</th>
+                            <th class="text-center">Jumlah Pesanan</th>
+                            <th class="text-center">Total</th>
+                            <th class="text-center">Status</th>
+                            <th class="text-center">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php
                           include("../koneksi.php");
                           $ambil_data = mysqli_query($con, "SELECT * FROM tbl_pesanan");
                           $no = 1;
@@ -60,11 +97,11 @@
                             $no++;
                           } ?>
 
-                                      </tbody>
-                                  </table>
-                              </div>
-                          </div>
-                      </div>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
+                </div>
               </div>
+            </div>
           </div>
