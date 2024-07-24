@@ -1,3 +1,17 @@
+<?php
+$thn_skr = date('Y');
+include "../koneksi.php";
+
+$year = date('Y');
+
+$total_penghasilan = [];
+for ($i = 1; $i <= 12; $i++) {
+    $query = "SELECT SUM(total) as total FROM tbl_pesanan WHERE MONTH(tanggal_pesanan) = $i AND YEAR(tanggal_pesanan) = $year";
+    $data = mysqli_query($con, $query);
+    $total = mysqli_fetch_array($data);
+    $total_penghasilan[] = $total['total'];
+}
+?>    
           <div class="content-wrapper">
             <div class="row">
               <div class="col-sm-12">
@@ -80,20 +94,14 @@
                                   >
                                     <div>
                                       <h4 class="card-title card-title-dash">
-                                        Performance Line Chart
+                                        Grafik Penghasilan Per Bulan
                                       </h4>
-                                      <h5
-                                        class="card-subtitle card-subtitle-dash"
-                                      >
-                                        Lorem Ipsum is simply dummy text of the
-                                        printing
-                                      </h5>
                                     </div>
                                     <div id="performanceLine-legend"></div>
                                   </div>
                                   <div class="chartjs-wrapper mt-4">
                                     <canvas
-                                      id="performanceLine"
+                                      id="GrafikPenghasilan"
                                       width=""
                                     ></canvas>
                                   </div>
@@ -185,3 +193,34 @@
                 </div>
               </div>
             </div>
+
+            <script type="text/javascript" >
+// Line Chart
+var ctx = document.getElementById("GrafikPenghasilan").getContext("2d");
+var data = {
+    labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+    datasets: [{
+        label: 'Penghasilan Bulanan',
+        data: <?php echo json_encode($total_penghasilan); ?>,
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1,
+        fill: false
+    }]
+};
+
+var options = {
+    scales: {
+        y: {
+            beginAtZero: true
+        }
+    }
+};
+
+var GrafikPenghasilan = new Chart(ctx, {
+    type: 'line',
+    data: data,
+    options: options
+});
+
+</script>

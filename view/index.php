@@ -43,6 +43,11 @@ if ($user) {
     <link rel="stylesheet" href="../assets/css/style.css" />
     <!-- endinject -->
     <link rel="shortcut icon" href="../assets/images/icon2.png" />
+    
+    <script src="../assets/vendors/chart.js/chart.umd.js"></script>
+
+    <script src="../assets/js/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../assets/js/chart.js"></script>
 </head>
 
 <body class="with-welcome-text">
@@ -348,7 +353,6 @@ if ($user) {
     <script src="../assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
-    <script src="../assets/vendors/chart.js/chart.umd.js"></script>
     <script src="../assets/vendors/progressbar.js/progressbar.min.js"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
@@ -359,8 +363,7 @@ if ($user) {
     <script src="../assets/js/todolist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page-->
-    <script src="../assets/js/jquery.cookie.js" type="text/javascript"></script>
-    <script src="../assets/js/dashboard.js"></script>
+    <!-- <script src="../assets/js/dashboard.js"></script> -->
     <!-- <script src="assets/js/Chart.roundedBarCharts.js"></script> -->
     <!-- End custom js for this page-->
 </body>

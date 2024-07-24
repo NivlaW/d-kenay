@@ -1,8 +1,8 @@
 (function($) {
   'use strict';
   $(function() {
-    if ($("#performanceLine").length) { 
-      const ctx = document.getElementById('performanceLine');
+    if ($("#grafik_penghasilan").length) { 
+      const ctx = document.getElementById('grafik_penghasilan');
       var graphGradient = document.getElementById("performanceLine").getContext('2d');
       var graphGradient2 = document.getElementById("performanceLine").getContext('2d');
       var saleGradientBg = graphGradient.createLinearGradient(5, 0, 5, 100);
@@ -11,8 +11,9 @@
       var saleGradientBg2 = graphGradient2.createLinearGradient(100, 0, 50, 150);
       saleGradientBg2.addColorStop(0, 'rgba(0, 208, 255, 0.19)');
       saleGradientBg2.addColorStop(1, 'rgba(0, 208, 255, 0.03)');
+      var ctx = document.getElementById("grafik_penghasilan");
 
-      new Chart(ctx, {
+      var grafik_penghasilan = new Chart(ctx, {
         type: 'line',
         data: {
           labels: ["SUN","sun", "MON", "mon", "TUE","tue", "WED", "wed", "THU", "thu", "FRI", "fri", "SAT"],
