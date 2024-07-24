@@ -30,8 +30,8 @@
                   echo "<td style ='text-align: center;'>$no.</td>";
                   echo "<td style ='text-align: center;'>$data[nama_menu]</td>";
                   echo "<td style ='text-align: center;'>Rp. $data[harga_makanan]</td>";
-                  echo "<td style ='text-align: center;'>$data[best_seller]</td>";
                   echo "<td style ='text-align: center;'><img src='foto/" . $data['foto'] . "' alt='foto' width='60' height='60'></td>";
+                  echo "<td style ='text-align: center;'>$data[best_seller]</td>";
                   // echo "<td> <img src='foto/{$data['foto']}' alt='foto' height='60' width='60'> </td>";
                   echo "<td class='d-flex justify-content-center gap-3'><a href='index.php?page=menu_edit&&id=" . $data['id_menu'] . " ' class='btn btn-warning'>Edit</a> <a href='index.php?page=menu_delete&&id=" . $data['id_menu'] . "' onclick='javascript: return confirm(`apakah anda ingin menghapus data ini..?`)' class='btn btn-danger'>Delete</a></td>";
 
