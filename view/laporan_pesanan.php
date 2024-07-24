@@ -7,7 +7,7 @@ $akhir = isset($_GET['akhir']) ? $_GET['akhir'] : '';
 
 <body onload="javascript:window.print()" style="margin: 0 auto; width: 1000px;">
 
-    <img src="UCIC.png" style="width:20%; height: 120px; float: left;" alt="">
+    <img src="../assets/images/logo 1.svg" style="width:20%; height: 120px; float: left;" alt="logo">
 
     <table width="100%" cellspacing="0" cellpadding="0">
         <tr>
@@ -30,7 +30,6 @@ $akhir = isset($_GET['akhir']) ? $_GET['akhir'] : '';
     <table width="100%" cellspacing="0" cellpadding="0" style="border: 1px solid #000; padding: 3px 5px;">
         <thead>
             <tr style="background-color: lightgray;">
-                <th></th>
                 <th style="border: 1px solid #000; padding: 3px 5px;">No</th>
                 <th style="border: 1px solid #000; padding: 3px 5px;">Nama Pemesan</th>
                 <th style="border: 1px solid #000; padding: 3px 5px;">Tanggal Pesanan</th>
@@ -82,7 +81,7 @@ $akhir = isset($_GET['akhir']) ? $_GET['akhir'] : '';
                 <td style="text-align: center;">Cirebon, <?php echo date("d F Y"); ?></td>
             </tr>
             <tr>
-                <td style="text-align: center;">Direktur Keuangan
+                <td style="text-align: center;">Owner Dapur Kenay
                     <p>&nbsp;</p>
                     <u>Slamet Raharjo</u>
                 </td>
