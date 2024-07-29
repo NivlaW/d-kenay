@@ -198,6 +198,9 @@ if ($user) {
                     } else if ($page == 'pesanan_delete') {
                         include 'pesanan_delete.php';
                     } else if ($page == 'pesanan_edit') {
+                    } else if ($page == 'multi_delete_pesanan') {
+                        include 'multi_delete_pesanan.php';
+                    } else if ($page == 'pesanan_edit') {
                         include 'pesanan_edit.php';
                     } else if ($page == 'logout') {
                         include '../logout.php';
