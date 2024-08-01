@@ -6,7 +6,6 @@
           <h4 class="card-title">Tabel Menu</h4>
           <form method="POST" action="index.php?page=multi_delete_menu">
             <a href="index.php?page=menu_add" class="btn btn-outline-primary btn-fw"> <i class="fa fa-plus-square-o"></i> Tambah Data</a>
-            <button href="" type="submit" name="btn_delete" class="btn btn-outline-danger btn-fw" onclick="javascript: return confirm('apakah anda ingin menghapus data ini..?')"> <i class="fa fa-trash-o"></i> Hapus Data</button>
             <div class="table-responsive">
               <table class="table table-hover">
                 <thead>

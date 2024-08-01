@@ -191,15 +191,12 @@ if ($user) {
                         include 'menu_delete.php';
                     } else if ($page == 'menu_edit') {
                         include 'menu_edit.php';
-                    } else if ($page == 'multi_delete_menu') {
-                        include 'multi_delete_menu.php';
                     } else if ($page == 'pesanan') {
                         include 'tabel_pesanan.php';
                     } else if ($page == 'pesanan_add') {
                         include 'pesanan_add.php';
                     } else if ($page == 'pesanan_delete') {
                         include 'pesanan_delete.php';
-                    } else if ($page == 'pesanan_edit') {
                     } else if ($page == 'multi_delete_pesanan') {
                         include 'multi_delete_pesanan.php';
                     } else if ($page == 'pesanan_edit') {
