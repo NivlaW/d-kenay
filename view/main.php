@@ -4,6 +4,15 @@ include "../koneksi.php";
 
 $year = date('Y');
 
+$query_penghasilan = "SELECT SUM(total) as total FROM tbl_pesanan";
+$data_penghasilan = mysqli_query($con, $query_penghasilan);
+$penghasilan = mysqli_fetch_array($data_penghasilan);
+$jumlah_transaksi = "SELECT COUNT(*) as total FROM tbl_pesanan";
+$data_transaksi = mysqli_query($con, $jumlah_transaksi);
+$transaksi = mysqli_fetch_array($data_transaksi);
+$jumlah_menu = "SELECT COUNT(*) as total FROM tbl_menu";
+$data_menu = mysqli_query($con, $jumlah_menu);
+$menu = mysqli_fetch_array($data_menu);
 $total_penghasilan = [];
 for ($i = 1; $i <= 12; $i++) {
   $query = "SELECT SUM(total) as total FROM tbl_pesanan WHERE MONTH(tanggal_pesanan) = $i AND YEAR(tanggal_pesanan) = $year";
@@ -40,15 +49,15 @@ for ($i = 1; $i <= 12; $i++) {
               <div class="col d-flex align-items-center justify-content-evenly">
                 <div>
                   <p class="statistics-title">Total Menu</p>
-                  <h3 class="rate-percentage">32.53 Items</h3>
+                  <h3 class="rate-percentage"><?php echo "$menu[0] Items"; ?></h3>
                 </div>
                 <div>
                   <p class="statistics-title">Total Pesanan</p>
-                  <h3 class="rate-percentage">7,682</h3>
+                  <h3 class="rate-percentage"><?php echo "$transaksi[0]"; ?></h3>
                 </div>
                 <div>
                   <p class="statistics-title">Total Penjualan</p>
-                  <h3 class="rate-percentage">Rp. 22222222222</h3>
+                  <h3 class="rate-percentage"><?php echo "Rp. $penghasilan[0]"; ?></h3>
                 </div>
               </div>
             </div>
