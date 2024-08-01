@@ -229,7 +229,7 @@ $ambilData = mysqli_query($con, "select * from tbl_menu");
     </section>
     <section id="order" class="position-relative">
         <div class="container">
-            <h1 class="text-center mt-3">Silahkan Pesan</h1>
+            <h1 class="title text-center mt-3">Silahkan Pesan</h1>
 
             <form class="mt-4" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
@@ -265,6 +265,15 @@ $ambilData = mysqli_query($con, "select * from tbl_menu");
                 </div>
                 <button type="submit" class="btn btn-submit w-100">Pesan Melalui Whatsapp</button>
             </form>
+        </div>
+    </section>
+    <section id="map" class="position-relative">
+        <div class="container d-flex flex-column justify-content-center align-items-center">
+            <h1 class="title">Titik Lokasi </h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.0390373811033!2d108.56891537604352!3d-6.765094866156807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f1d00138f2911%3A0xa1002f7b038fce94!2sDapur%20Kenay!5e0!3m2!1sid!2sid!4v1722526248312!5m2!1sid!2sid"
+                    height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
     <!-- end order section -->

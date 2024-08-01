@@ -156,6 +156,7 @@ body p {
     display: flex;
     align-items: center;
 }
+
 #menu .title{
     text-align: center;
     font-weight: 800;
@@ -188,10 +189,28 @@ body p {
     display: flex;
     align-items: center;
 }
+#order .title{
+    text-align: center;
+    font-weight: 800;
+}
+#order .title span{
+    color: var(--bs-primary);
+}
 .form-control {
     border: 2px solid #2d2d2d!important;
 }
-
+#map {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+}
+#map .title{
+    text-align: center;
+    font-weight: 800;
+}
+#map .title span{
+    color: var(--bs-primary);
+}
 @media (max-width: 998px) {
     #order {
         margin: auto 1rem;
