@@ -20,7 +20,18 @@
                         </div>
                         <div class="form-group">
                             <label for="">Makanan</label>
-                            <input type="text" class="form-control" id="" name="makanan" placeholder="">
+                            <select name="makanan" id="" class="form-control">
+                            <option disabled value="">~Pilih Menu~</option>
+                            <?php
+                            $no = 1;
+                            $ambilData = mysqli_query($con, "select * from tbl_menu");
+                            while ($data = mysqli_fetch_array($ambilData)) {
+                            ?>
+                            <option value="<?php echo "$data[id_menu]" ?>"><?php echo "$data[nama_menu]" ?></option>
+
+                            <?php } ?>
+
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="">Jumlah</label>
