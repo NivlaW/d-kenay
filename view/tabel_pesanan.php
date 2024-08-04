@@ -29,7 +29,7 @@
 
 
             <div class="d-flex gap-2">
-              <!-- <a href="index.php?page=pesanan_add" class="btn btn-outline-primary btn-fw"> <i class="fa fa-plus-square-o"></i> Tambah Data</a> -->
+              <a href="index.php?page=pesanan_add" class="btn btn-outline-primary btn-fw"> <i class="fa fa-plus-square-o"></i> Tambah Data</a>
               <button href="" type="submit" name="btn_delete" class="btn btn-outline-danger btn-fw" onclick="javascript: return confirm('apakah anda ingin menghapus data ini..?')"> <i class="fa fa-trash-o"></i> Hapus Data</button>
               <a target="_blank" href="export_excel.php" class="btn btn-success"><i class="fa fa-file-o"></i> Export to Excel</a>
               <a href="laporan_pesanan.php?awal=<?php echo isset($_POST['awal']) ? $_POST['awal'] : ''; ?>&akhir=<?php echo isset($_POST['akhir']) ? $_POST['akhir'] : ''; ?>" target="_blank" class="btn btn-info"><i class="fas fa-plus"></i> Cetak Data</a>
