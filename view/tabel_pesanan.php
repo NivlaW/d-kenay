@@ -5,7 +5,7 @@
         <div class="card-body">
           <h4 class="card-title">Tabel Pesanan</h4>
 
-          <form method="POST" action="index.php?page=multi_delete_pesanan">
+          <form method="POST">
             <div class="form-row">
               <div class="col-md-3">
                 <div class="form-group">
@@ -26,8 +26,9 @@
                 </div>
               </div>
             </div>
-
-
+            </form>
+            
+            <form method="POST" action="index.php?page=multi_delete_pesanan">
             <div class="d-flex gap-2">
               <a href="index.php?page=pesanan_add" class="btn btn-outline-primary btn-fw"> <i class="fa fa-plus-square-o"></i> Tambah Data</a>
               <button href="" type="submit" name="btn_delete" class="btn btn-outline-danger btn-fw" onclick="javascript: return confirm('apakah anda ingin menghapus data ini..?')"> <i class="fa fa-trash-o"></i> Hapus Data</button>
